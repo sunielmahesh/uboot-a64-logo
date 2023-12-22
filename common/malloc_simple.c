@@ -26,6 +26,8 @@ static void *alloc_simple(size_t bytes, int align)
 	new_ptr = addr + bytes - gd->malloc_base;
 	log_debug("size=%lx, ptr=%lx, limit=%lx: ", (ulong)bytes, new_ptr,
 		  gd->malloc_limit);
+	printf("size=%lx, ptr=%lx, limit=%lx: ", (ulong)bytes, new_ptr,
+		  gd->malloc_limit);
 	if (new_ptr > gd->malloc_limit) {
 		log_err("alloc space exhausted\n");
 		return NULL;
